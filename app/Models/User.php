@@ -21,15 +21,24 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
     
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
+    public function equipes(){
+        return $this->belongsToMany(Equipe::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'role_id',
+        'date_nisonce',
     ];
 
     /**
