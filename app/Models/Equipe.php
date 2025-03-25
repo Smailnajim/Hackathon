@@ -9,8 +9,13 @@ class Equipe extends Model
 {
     use HasFactory;
 
-    public function users(){
-        return $this->belongsToMany(User::class);
+    protected $fillable = [
+        'hackaton_id',
+        'date_create'
+    ];
+
+    public function user(){
+        return $this->belongsToMany(User::class, 'user_equipe');
     }
     public function project(){
         return $this->hasOne(Project::class);

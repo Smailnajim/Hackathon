@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EquipeController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +23,5 @@ Route::middleware('auth:api')->group(function(){
 
 Route::post('loging', [AuthController::class, 'loging']);
 Route::post('register', [AuthController::class, 'register']);
+Route::post('logout', [AuthController::class, 'logout']);
+Route::post('dd', [EquipeController::class, 'store']);

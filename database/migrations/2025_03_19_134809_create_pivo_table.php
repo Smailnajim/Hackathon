@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserEquipeTable extends Migration
+class CreatePivoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,12 @@ class CreateUserEquipeTable extends Migration
     public function up()
     {
         Schema::create('user_equipe', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
-            $table->string('user_role');
-            $table->foreignId('equipe_id')->references('id')->on('equipes');
-            $table->timestamps();
-        });
+        $table->id();
+        $table->foreignId('user_id')->references('id')->on('users');
+        // $table->string('user_role');
+        $table->foreignId('equipe_id')->references('id')->on('equipes');
+        $table->timestamps();
+});
     }
 
     /**
