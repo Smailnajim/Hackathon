@@ -15,7 +15,7 @@ class Equipe extends Model
     ];
 
     public function user(){
-        return $this->belongsToMany(User::class, 'user_equipe');
+        return $this->belongsToMany(User::class, 'user_equipe')->withPivot('user_role');
     }
     public function project(){
         return $this->hasOne(Project::class);

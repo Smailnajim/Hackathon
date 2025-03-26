@@ -25,7 +25,7 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsTo(Role::class);
     }
     public function equipes(){
-        return $this->belongsToMany(Equipe::class, 'user_equipe');
+        return $this->belongsToMany(Equipe::class, 'user_equipe')->withPivot('user_role');
     }
     /**
      * The attributes that are mass assignable.
@@ -37,7 +37,6 @@ class User extends Authenticatable implements JWTSubject
         'last_name',
         'email',
         'password',
-        'role_id',
         'date_nisonce',
     ];
 

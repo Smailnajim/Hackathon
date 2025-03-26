@@ -25,3 +25,4 @@ Route::post('loging', [AuthController::class, 'loging']);
 Route::post('register', [AuthController::class, 'register']);
 Route::post('logout', [AuthController::class, 'logout']);
 Route::post('dd', [EquipeController::class, 'store']);
+Route::post('equipe/join', [EquipeController::class, 'joineEquipe']);
