@@ -12,4 +12,12 @@ class Hackthon extends Model
     public function equipes(){
         return $this->hasMany(Equipe::class);
     }
+
+    protected $table = 'hacktons';
+
+    protected $fillable = [
+        "description",
+        "name",
+        "image",
+    ];
 }
