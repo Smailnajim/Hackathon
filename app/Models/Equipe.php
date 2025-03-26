@@ -23,4 +23,7 @@ class Equipe extends Model
     public function hackthon(){
         return $this->hasOne(hackthon::class);
     }
+    public function status(){
+        return $this->belongsTo(statu::class);
+    }
 }

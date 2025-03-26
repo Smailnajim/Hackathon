@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\HackathoController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::post('logout', [AuthController::class, 'logout']);
 Route::post('dd', [EquipeController::class, 'store']);
 Route::post('equipe/join', [EquipeController::class, 'joineEquipe']);
 Route::post('hackaton', [HackathoController::class, 'store']);
+Route::post('valid', [UserController::class, 'validEquip']);
